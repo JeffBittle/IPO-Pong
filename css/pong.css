@@ -1,0 +1,12 @@
+html, body {
+  color: #fff;
+  font-family: monospace;
+  font-size: 1em;
+  background-color: navy;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
