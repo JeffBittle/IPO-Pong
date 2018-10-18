@@ -8,3 +8,5 @@ All graphics variations are prerendered to offscreen canvases to create sprite s
 Particle effects are handled using a dynamic object pooling system allowing the pool of objects to be reused and avoiding cycles being taken up from unnecessary garbage collector calls.
 
 Audio is handled by utilizing the Web Audio API which allows for several interesting effects, including pitch variation of the sound samples to make the sounds slightly more interesting to the ear, as well as a stereo panning effect which causes the sounds to be played where they happen, whether on the left or right side of the playfield.
+
+This was completed mid October 2018
