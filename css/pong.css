@@ -1,12 +1,123 @@
-html, body {
-  color: #fff;
-  font-family: monospace;
-  font-size: 1em;
-  background-color: navy;
-  height: 100vh;
+@font-face {
+  font-family: 'Digital-7 Mono';
+  src: url('/fonts/digital-7__mono_.ttf') format('truetype');
+}
+
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html, body {
+  color: #fff;
+  font-family: 'Digital-7 Mono', monospace;
+  font-size: 1em;
+  background: linear-gradient(
+    cornflowerblue,
+    blue 75%,
+    blue 75%,
+    navy
+  );
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  /* border: 1px solid white; */
+  z-index: 1;
+  cursor: ns-resize;
+}
+
+#tvscreen {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 6% 3%;
+  margin-top: 62px;
+  border-radius: 50% / 10%;
+  background: black;
+  z-index: 0;
+}
+
+#tvscreen:before {
+  content: "";
+  position: absolute;
+  top: 8%;
+  bottom: 8%;
+  right: -4%;
+  left: -4%;
+  margin: 0 auto;
+  background: black;
+  border-radius: 5% / 50%;
+  z-index: -1;
+}
+
+#fpsdisplay {
+  position: absolute;
+  top: 5%;
+  left: 7%;
+  z-index: 10;
+}
+
+div#form {
+  position: absolute;
+  top: 0;
+  display: flex;
+  font-family: monospace;
+  font-size: 1.1em;
+  color: black;
+}
+
+div#form div {
+  height: 100%;
+}
+
+div#form div div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2em 0;
+  height: 62px;
+  background-color: white;
+  border-right: 1px solid grey;
+}
+
+div#form div div.left {
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+div#form span.legend {
+  position: relative;
+  display: block;
+  background-color: white;
+  padding: 0 0.5em;
+  border-radius: 0 0 10px 10px;
+  border-bottom: 1px solid grey;
+  border-right: 1px solid grey;
+}
+
+div#form label {
+  margin-left: 0.5em;
+}
+
+div#form label input {
+  position: relative;
+  top: 2px;
+}
+
+footer {
+  position:absolute;
+  bottom: 0;
+  font-family: monospace;
+}
+
+footer a {
+  color: cornflowerblue;
 }

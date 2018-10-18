@@ -5,10 +5,81 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
     <link rel=Stylesheet href="css/pong.css" type="text/css" />
-    <!-- <script type="text/javascript" src="js/Main.js"></script> -->
+    <script type="text/javascript" src="js/Engine.js"></script>
+    <script type="text/javascript" src="js/Input.js"></script>
+    <script type="text/javascript" src="js/Vector.mjs"></script>
+    <script type="text/javascript" src="js/Ball.js"></script>
+    <script type="text/javascript" src="js/Paddle.js"></script>
+    <script type="text/javascript" src="js/Particle.js"></script>
+    <script type="text/javascript" src="js/ObjectPool.js"></script>
+    <script type="text/javascript" src="js/Game.js"></script>
+    <script type="text/javascript" src="js/SpriteRendering.js"></script>
+    <script type="text/javascript" src="js/AudioBuffer.js"></script>
+    <script type="text/javascript" src="js/Sound.js"></script>
+    <script type="text/javascript" src="js/Display.js"></script>
+    <script type="text/javascript" src="js/Main.js"></script>
   </head>
 
   <body>
-    <canvas></canvas>
+    <div id="tvscreen">
+      <div id="fpsdisplay"></div>
+      <canvas></canvas>
+    </div>
+    <div id="form">
+      <div>
+        <div class="left">
+          <label for="DirectMouseControl"><input type="radio" id="DirectMouseControl" name="LeftPaddleControl" value="Direct Mouse" checked />Direct Mouse</label>
+          <label for="SmoothedMouseControl"><input type="radio" id="SmoothedMouseControl" name="LeftPaddleControl" value="Smoothed Mouse" />Smoothed Mouse</label>
+          <label for="LeftCPUControl"><input type="radio" id="LeftCPUControl" name="LeftPaddleControl" value="CPU"  />CPU</label>
+        </div>
+        <span class="legend">Left Paddle Control</span>
+      </div>
+      <div>
+        <div>
+          <select id="winningGoal">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3" selected>3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select>
+        </div>
+        <span class="legend">Winning Score</span>
+      </div>
+      <div>
+        <div>
+          <button type="button" id="GamePause">Game Pause</button>
+          <button type="button" id="GameReset">Game Reset</button>
+        </div>
+        <span class="legend">Game Controls</span>
+      </div>
+      <div>
+        <div>
+          <button type="button" id="EngineToggle">Stop/Start</button>
+          <label for="fpsControl">FPS
+            <select id="fpsControl">
+              <option value="15">15</option>
+              <option value="30">30</option>
+              <option value="60" selected>60</option>
+            </select>
+          </label>
+          <label for="upsControl"><abbr title="Updates Per Second">UPS</abbr>
+            <select id="upsControl">
+              <option value="15">15</option>
+              <option value="30">30</option>
+              <option value="60" selected>60</option>
+            </select>
+          </label>
+        </div>
+        <span class="legend">Engine Controls</span>
+      </div>
+    </div>
+    <footer>
+      Sound effects obtained from <a href="http://www.zapsplat.com">zapsplat.com</a>
+    </footer>
   </body>
 </html>
