@@ -98,7 +98,7 @@ window.onload = function() {
   audioBuffer = new AudioBuffer(audioContext, soundArray);
   canvas.addEventListener("click", function() {
     audioContext.resume(); // With a coming Chrome update, user input is needed before an AudioContext created on pageload is allowed to play audio
-  });
+  }, { once: true });
   const spriteSheets = {
           Net: makeNetSprites(height, netSegmentWidth, netSegmentHeight, blurAmount, colorArray),
           Wall: makeWallSprites(yWallThickness * 2, width, blurAmount, colorArray),
