@@ -24,19 +24,20 @@ class Engine {
 
     this.updateCallback = _updateCallback;
     this.renderCallback = _renderCallback;
+    this.mainLoop = this.mainLoop.bind(this);
   }
 
   start() {
     if(!this.loopRunning) {
       this.loopStarted = true;
-      this.frameID = requestAnimationFrame(function(_currentTime) {
+      this.frameID = requestAnimationFrame((_currentTime) => {
         this.renderCallback();
         this.loopRunning = true;
         this.lastFrameTime = this.lastPhysicsTime = this.lastFPSUpdate = _currentTime;
         this.framesThisSecond = 0;
         this.accumulator = 0;
-        this.frameID = requestAnimationFrame(this.mainLoop.bind(this));
-      }.bind(this));
+        this.frameID = requestAnimationFrame(this.mainLoop);
+      });
     }
   }
 
@@ -79,7 +80,7 @@ class Engine {
       this.renderCallback();
     }
 
-    this.frameID = requestAnimationFrame(this.mainLoop.bind(this));
+    this.frameID = requestAnimationFrame(this.mainLoop);
   }
 
   panic() {
