@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Digital-7 Mono';
-  src: url('/fonts/digital-7__mono_.ttf') format('truetype');
+  src: url('../fonts/digital-7__mono_.ttf') format('truetype');
 }
 
 * {
