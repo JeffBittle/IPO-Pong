@@ -4,7 +4,6 @@
 }
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -24,12 +23,11 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 
-canvas {
-  /* border: 1px solid white; */
-  z-index: 1;
-  cursor: ns-resize;
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 #tvscreen {
@@ -52,7 +50,7 @@ canvas {
   right: -4%;
   left: -4%;
   margin: 0 auto;
-  background: black;
+  background: inherit;
   border-radius: 5% / 50%;
   z-index: -1;
 }
@@ -62,6 +60,15 @@ canvas {
   top: 5%;
   left: 7%;
   z-index: 10;
+}
+
+canvas {
+  /* border: 1px solid white; */
+  z-index: 1;
+  cursor: ns-resize;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
 div#form {
