@@ -2,13 +2,13 @@
 
 class Paddle {
   constructor(_x, _width, _height, _yMin, _yMax, _maxSpeed) {
-    this.width = Math.abs(_width);
+    this.width = _width;
     this.height = _height;
     this.halfWidth = Math.round(this.width / 2);
     this.halfHeight = Math.round(this.height / 2);
     this.yMin = _yMin + this.halfHeight;
     this.yMax = _yMax - this.halfHeight;
-    this.position = new Vector(_x + this.halfWidth, Math.round((this.yMin + this.yMax) / 2));
+    this.position = new Vector(_x, Math.round((this.yMin + this.yMax) / 2));
     this.goalPosition = this.position.clone();
     this.maxSpeed = _maxSpeed;
   }

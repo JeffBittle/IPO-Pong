@@ -361,7 +361,7 @@ class Game {
 
   initPaddles(_width, _height, _maxSpeed, _offsetFromEdge) {
     return {
-      left: new Paddle(this.x + _offsetFromEdge + Math.round(_width / 2), -_width, _height, this.y, this.y + this.height, _maxSpeed),
+      left: new Paddle(this.x + _offsetFromEdge + Math.round(_width / 2), _width, _height, this.y, this.y + this.height, _maxSpeed),
       right: new Paddle(this.x + this.width - _offsetFromEdge - Math.round(_width / 2), _width, _height, this.y, this.y + this.height, _maxSpeed)
     };
   }
